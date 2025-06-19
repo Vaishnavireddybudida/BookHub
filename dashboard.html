@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | BookHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #4f46e5;
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar a {
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #4338ca;
+    }
+
+    .main {
+      flex-grow: 1;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    .main h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .recommendations {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .recommendations h3 {
+      margin-bottom: 15px;
+      color: #4f46e5;
+    }
+
+    .recommendations p {
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+      }
+      .sidebar a {
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="mybooks.html">My Books</a>
+    <a href="settings.html">Settings</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+
+  <div class="main">
+    <h2>Welcome, <span id="username">User</span></h2>
+    <div class="stats">Books Borrowed: 3 | Books Lent: 2</div>
+
+    <div class="recommendations">
+      <h3>📚 Recommended Books</h3>
+      <p>Explore new titles based on your reading history. Suggestions will be personalized soon.</p>
+    </div>
+  </div>
+
+  <script>
+    // Set user name from localStorage
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      document.getElementById('username').textContent = user.firstName;
+    }
+
+    function logout() {
+      localStorage.removeItem('user');
+      localStorage.removeItem('loggedInUser');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Exchange System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+    }
+
+    header {
+      background-color: #4f46e5;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .top-header span {
+      margin-right: 15px;
+      font-size: 14px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .nav-links, .auth-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links li {
+      list-style: none;
+    }
+
+    .nav-links a, .auth-buttons a, .logo a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover, .auth-buttons a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      padding: 100px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-btn {
+      background-color: #f59e0b;
+      padding: 12px 20px;
+      border: none;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+      background-color: #d97706;
+    }
+
+    .books-preview {
+      padding: 40px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .books-preview h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .book-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .book-card {
+      width: 250px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .book-card h4 {
+      color: #4f46e5;
+    }
+
+    .view-all {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #4f46e5;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #4f46e5;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    .footer-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-header">
+      <span>Email: info@bookhub.com</span>
+      <span>Phone: +91-9876543210</span>
+      <span>Social: Facebook | Twitter | Instagram</span>
+    </div>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">📖 BookHub</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="books.html">All Books</a></li>
+      </ul>
+      <div class="auth-buttons" id="authButtons">
+        <a href="login.html">Login</a>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Welcome to BookHub 📚</h1>
+      <p>Buy, Sell, or Exchange Books Easily</p>
+      <a href="books.html" class="hero-btn">Explore Now</a>
+    </div>
+  </section>
+
+  <section class="books-preview">
+    <h3 data-aos="fade-right">Top Books</h3>
+    <div class="book-list" id="bookList">
+      <div class="book-card" data-aos="zoom-in">
+        <h4>Atomic Habits</h4>
+        <p>James Clear</p>
+        <p class="desc">A guide to building good habits and breaking bad ones.</p>
+      </div>
+      <div class="book-card" data-aos="zoom-in">
+        <h4>The Alchemist</h4>
+        <p>Paulo Coelho</p>
+        <p class="desc">A mystical story about following your dreams.</p>
+      </div>
+      <div class="book-card" data-aos="zoom-in">
+        <h4>Think and Grow Rich</h4>
+        <p>Napoleon Hill</p>
+        <p class="desc">A classic guide to achieving personal and financial success.</p>
+      </div>
+      
+    </div>
+    <a href="books.html" class="view-all" data-aos="fade-up">View All Books</a>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+    <div class="footer-contact">
+      <p>Email: info@bookhub.com | Phone: +91-9876543210</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
